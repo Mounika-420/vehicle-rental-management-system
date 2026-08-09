@@ -1,12 +1,17 @@
 import pymysql
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 class data_base:
     def __init__(self):
         self.conn = pymysql.connect(
-            host="127.0.0.1",
-            user="root",
-            password="Root@12345",
-            database="vehicle_rental",
+            host=os.getenv("DB_HOST"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            database=os.getenv("DB_NAME"),
             charset="utf8"
         )
 

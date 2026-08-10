@@ -5,13 +5,13 @@ import os
 import ast
 from datetime import date
 
-aa=data_base.data_base()
+
+aa = data_base.Database()
 
 
 
 app=Flask(__name__)
 app.config['SECRET_KEY'] = '1'
-
 
 def _is_logged_in():
     return "user_id" in session or "owner_id" in session
